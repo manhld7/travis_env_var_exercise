@@ -19,5 +19,6 @@ script:
   - docker tag simple-node manhld7/simple-node:latest
 
 after_success:
+  - echo "$FAVORITE_FOOD"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push manhld7/simple-node
